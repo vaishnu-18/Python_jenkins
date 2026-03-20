@@ -143,7 +143,32 @@ DAY 2
 | DNS server          | (DC private IP) |
 | DNS domain          | becode.corp.lab |
 | Dynamic DNS updates | Enabled |
-
 ## Note — multi-scope production deployment
 In a real BeCode Corp. deployment, one scope per department VLAN would be needed.
 See network project documentation for VLAN and subnet definitions.
+
+## Security Baseline — BeCode Corp.
+
+### Password Policy (Default Domain Policy)
+| Setting                          | Configured value |
+|----------------------------------|------------------|
+| Minimum password length          |       12           |
+| Complexity required              |   Enabled         |
+| Maximum password age             |     90 days       |
+| Minimum password age             |     1 day        |
+| Password history                 |    10 passwords   |
+
+### Account Lockout Policy
+| Setting                          | Configured value |
+|----------------------------------|------------------|
+| Lockout threshold                | 5 valid attempts  |
+| Lockout duration                 | 15 minutes    |
+| Reset counter after              |   15 minutes    |
+
+### Monitoring (GPO: Security-Monitoring)
+| Setting                          | Status |
+|----------------------------------|--------|
+| PowerShell ScriptBlock Logging   | Turn On|
+| PowerShell Module Logging        | Turn On|
+| Process Creation Auditing (4688) | Not yet configured — Day 3 |
+| Sysmon                           | Not yet installed — Day 3 |
