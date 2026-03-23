@@ -172,3 +172,21 @@ See network project documentation for VLAN and subnet definitions.
 | PowerShell Module Logging        | Turn On|
 | Process Creation Auditing (4688) | Not yet configured — Day 3 |
 | Sysmon                           | Not yet installed — Day 3 |
+
+## Sysmon
+
+| Field         | Value                                     |
+|---------------|-------------------------------------------|
+| Version       |  v15.15                                       |
+| Configuration | SwiftOnSecurity sysmon-config             |
+| Log channel   | Microsoft-Windows-Sysmon/Operational      |
+| Install date  |     23/03/2026                                      |
+
+
+Scenario	Event ID(s)	Log location	Key information captured	Would be detectable without Sysmon/ScriptBlock logging?
+1 — Password spray - 4625 - dc01 - 				
+2 — Backdoor account				
+3 — SYSVOL + repadmin				
+4 — Encoded command				
+5 — Scheduled task				
+6 — Outbound connection				
